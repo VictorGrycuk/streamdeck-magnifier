@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/icon",
+      "Name": "Magnifier",
+      "States": [
+        {
+          "Image": "Images/magnifierAction",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Magnifier",
+      "UUID": "victorgrycuk.streamdeck.magnifier",
+      "PropertyInspectorPath": "PropertyInspector/MagnifierPI.html"
+    }
+  ],
+  "Author": "Victor Grycuk",
+  "Name": "Magnifier",
+  "Description": "Converts a Stream Deck key into a screen magnifier, with up to 32x zoom.",
+  "Icon": "Images/magnifierIcon",
+  "URL": "https://github.com/VictorGrycuk/streamdeck-magnifier",
+  "Version": "0.9",
+  "CodePath": "streamdeck-magnifier",
+  "Category": "Magnifier",
+  "CategoryIcon": "Images/categoryIcon",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.3"
+  }
+}
