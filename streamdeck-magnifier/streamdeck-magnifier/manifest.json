@@ -1,7 +1,7 @@
 {
   "Actions": [
     {
-      "Icon": "Images/icon",
+      "Icon": "Images/magnifierActionImage",
       "Name": "Magnifier",
       "States": [
         {
@@ -14,14 +14,29 @@
       "Tooltip": "Magnifier",
       "UUID": "victorgrycuk.streamdeck.magnifier",
       "PropertyInspectorPath": "PropertyInspector/MagnifierPI.html"
+    },
+    {
+      "Icon": "Images/moverActionImage",
+      "Name": "Mouse Mover",
+      "States": [
+        {
+          "Image": "Images/moverKeyImage",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Mover",
+      "UUID": "victorgrycuk.streamdeck.mover",
+      "PropertyInspectorPath": "PropertyInspector/MoverPI.html"
     }
   ],
   "Author": "Victor Grycuk",
   "Name": "Magnifier",
-  "Description": "Converts a Stream Deck key into a screen magnifier, with up to 32x zoom.",
+  "Description": "Converts a Stream Deck key into a screen magnifier, with up to 32x zoom.\nIncludes an option to move the mouse pixel by pixel for better precision.",
   "Icon": "Images/magnifierIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-magnifier",
-  "Version": "0.9",
+  "Version": "1.0",
   "CodePath": "streamdeck-magnifier",
   "Category": "Magnifier",
   "CategoryIcon": "Images/categoryIcon",

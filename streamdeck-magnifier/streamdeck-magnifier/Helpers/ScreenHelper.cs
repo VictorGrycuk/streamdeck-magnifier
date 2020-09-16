@@ -16,8 +16,11 @@ namespace Magnifier.Helpers
         [DllImport("user32.dll")]
         static extern bool GetCursorPos(ref Point lpPoint);
 
+        [DllImport("User32.Dll")]
+        private static extern long SetCursorPos(int x, int y);
+
         [DllImport("gdi32.dll", CharSet = CharSet.Auto, SetLastError = true, ExactSpelling = true)]
-        public static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
+        private static extern int BitBlt(IntPtr hDC, int x, int y, int nWidth, int nHeight, IntPtr hSrcDC, int xSrc, int ySrc, int dwRop);
 
         [DllImport("shcore.dll")]
         private static extern int SetProcessDpiAwareness(ProcessDPIAwareness value);
@@ -33,6 +36,11 @@ namespace Magnifier.Helpers
             GetCursorPos(ref cursorLocation);
 
             return cursorLocation;
+        }
+
+        internal static void SetMouseLocation(int xPos, int yPos)
+        {
+            SetCursorPos(xPos, yPos);
         }
     }
 }

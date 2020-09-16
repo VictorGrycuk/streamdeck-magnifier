@@ -2,11 +2,11 @@
 
 namespace Magnifier
 {
-    internal class PluginSettings
+    internal class MagnifierSettings
     {
-        public static PluginSettings CreateDefaultSettings()
+        public static MagnifierSettings CreateDefaultSettings()
         {
-            var instance = new PluginSettings { ZoomLevel = 2 };
+            var instance = new MagnifierSettings { ZoomLevel = 2 };
             return instance;
         }
 

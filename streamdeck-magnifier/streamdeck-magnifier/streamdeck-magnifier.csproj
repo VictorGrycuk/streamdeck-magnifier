@@ -69,8 +69,10 @@
   <ItemGroup>
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\ScreenHelper.cs" />
+    <Compile Include="MoverSettings.cs" />
+    <Compile Include="Mover.cs" />
     <Compile Include="Magnifier.cs" />
-    <Compile Include="PluginSettings.cs" />
+    <Compile Include="MagnifierSettings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -82,16 +84,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\arrow.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\categoryIcon%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\categoryIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\icon%402x.png">
+    <Content Include="Images\magnifierActionImage%402x.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\icon.png">
+    <Content Include="Images\magnifierActionImage.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\magnifierAction%402x.png">
@@ -105,6 +110,18 @@
     </Content>
     <Content Include="Images\magnifierIcon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\moverActionImage%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\moverActionImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\moverKeyImage%402x.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\moverKeyImage.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\caret.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -123,6 +140,9 @@
     </Content>
     <Content Include="PropertyInspector\MagnifierPI.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PropertyInspector\MoverPI.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\rcheck.svg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

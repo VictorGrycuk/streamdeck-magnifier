@@ -9,14 +9,14 @@ namespace Magnifier
     [PluginActionId("victorgrycuk.streamdeck.magnifier")]
     public class Magnifier : PluginBase
     {
-        private readonly PluginSettings settings;
+        private readonly MagnifierSettings settings;
         private bool isRunning;
 
         public Magnifier(SDConnection connection, InitialPayload payload) : base(connection, payload)
         {
             settings = payload.Settings == null || payload.Settings.Count == 0
-                ? PluginSettings.CreateDefaultSettings()
-                : payload.Settings.ToObject<PluginSettings>();
+                ? MagnifierSettings.CreateDefaultSettings()
+                : payload.Settings.ToObject<MagnifierSettings>();
         }
 
         public override void Dispose()
@@ -26,15 +26,7 @@ namespace Magnifier
 
         public override void KeyPressed(KeyPayload payload)
         {
-            try
-            {
-                isRunning = !isRunning;
-            }
-            catch (Exception ex)
-            {
-                Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
-                throw;
-            }
+            isRunning = !isRunning;
         }
 
         public override void KeyReleased(KeyPayload payload) { }
