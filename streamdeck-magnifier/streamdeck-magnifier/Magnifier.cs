@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using Magnifier.Helpers;
 using System;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Magnifier
 {
@@ -37,6 +38,12 @@ namespace Magnifier
             {
                 var img = ImageHelper.CopyFromScreen(settings.ZoomLevel);
                 img = ImageHelper.ResizeImage(img, 144, 144);
+
+                if (settings.UseCrosshair)
+                {
+                    ImageHelper.DrawCrosshair(img);
+                }
+
                 Connection.SetImageAsync(img);
             }
         }

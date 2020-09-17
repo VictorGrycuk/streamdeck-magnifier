@@ -13,6 +13,9 @@ namespace Magnifier
         [JsonProperty(PropertyName = "zoomLevel")]
         public string PIZoomLevel { get; set; }
 
+        [JsonProperty(PropertyName = "useCrosshair")]
+        public bool UseCrosshair { get; set; }
+
         public int ZoomLevel { get; set; }
     }
 }

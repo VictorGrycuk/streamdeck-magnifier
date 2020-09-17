@@ -45,5 +45,22 @@ namespace Magnifier.Helpers
 
             return img;
         }
+
+        internal static void DrawCrosshair(Image image)
+        {
+            using (var graphics = Graphics.FromImage(image))
+            {
+                var color = ((Bitmap)image).GetPixel(72, 72);
+                var pen = new Pen(IsDarkColor(color) ? Color.White : Color.Black, 1);
+                graphics.DrawLine(pen, 0, 72, 144, 72);
+                graphics.DrawLine(pen, 72, 0, 72, 144);
+            }
+        }
+
+        internal static bool IsDarkColor(Color color)
+        {
+            var luminance = 0.212655 * color.R + 0.715158 * color.G + 0.072187 * color.B;
+            return luminance < 150;
+        }
     }
 }
