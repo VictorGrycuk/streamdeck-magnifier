@@ -7,9 +7,24 @@ Includes an option to move the mouse pixel by pixel for better precision.
 
 ![color-picker](images/magnifier-deck.png)
 
-## Details
+Done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
-TODO
+## Features
+
+### Magnifier
+![color-picker](images/magnifier.gif)
+
+- Turns a Stream Deck key into a screen magnifier
+- Allows up to 32x zoom
+- Press to start, press again to stop
+- Refresh update is 1 second do to Stream Deck API limit
+- Optional crosshair
+
+### Mover
+![color-picker](images/mover.gif)
+- Moves the mouse in the selected direction 1 pixel
+- Useful for precision
+- Not much to say, its super simple
 
 ## My other Stream Deck plugins
 
