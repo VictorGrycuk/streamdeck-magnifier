@@ -12,6 +12,9 @@ namespace Magnifier
     {
         private readonly MagnifierSettings settings;
         private bool isRunning;
+        private bool isFixed;
+        private Point mouseLocation;
+        private DateTime dateTime;
 
         public Magnifier(SDConnection connection, InitialPayload payload) : base(connection, payload)
         {
@@ -28,15 +31,25 @@ namespace Magnifier
         public override void KeyPressed(KeyPayload payload)
         {
             isRunning = !isRunning;
+            dateTime = DateTime.Now;
         }
 
-        public override void KeyReleased(KeyPayload payload) { }
+        public override void KeyReleased(KeyPayload payload)
+        {
+            if ((DateTime.Now - dateTime).TotalSeconds > 2)
+            {
+                mouseLocation = ScreenHelper.GetMouseLocation();
+                isFixed = true;
+                isRunning = true;
+            }
+        }
 
         public override void OnTick()
         {
             if (isRunning)
             {
-                var img = ImageHelper.CopyFromScreen(settings.ZoomLevel);
+                var location = isFixed ? mouseLocation : ScreenHelper.GetMouseLocation();
+                var img = ImageHelper.CopyFromScreen(settings.ZoomLevel, location);
                 img = ImageHelper.ResizeImage(img, 144, 144);
 
                 if (settings.UseCrosshair)
