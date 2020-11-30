@@ -17,7 +17,8 @@ Done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamde
 - Turns a Stream Deck key into a screen magnifier
 - Allows up to 32x zoom
 - Press to start, press again to stop
-- Refresh update is 1 second do to Stream Deck API limit
+- Long press (+2 seconds) to lock the location, long press again to unlock it
+- Refresh update is 10ms
 - Optional crosshair
 
 ### Mover
