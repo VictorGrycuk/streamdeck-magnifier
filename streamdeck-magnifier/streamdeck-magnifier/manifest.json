@@ -36,7 +36,7 @@
   "Description": "Converts a Stream Deck key into a screen magnifier, with up to 32x zoom.\nIncludes an option to move the mouse pixel by pixel for better precision.",
   "Icon": "Images/magnifierIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-magnifier",
-  "Version": "1.1",
+  "Version": "1.2.1",
   "CodePath": "streamdeck-magnifier",
   "Category": "Magnifier",
   "CategoryIcon": "Images/categoryIcon",

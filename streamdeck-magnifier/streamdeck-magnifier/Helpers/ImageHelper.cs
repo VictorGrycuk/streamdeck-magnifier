@@ -28,15 +28,14 @@ namespace Magnifier.Helpers
             return newImage;
         }
 
-        internal static Image CopyFromScreen(int zoomLevel)
+        internal static Image CopyFromScreen(int zoomLevel, Point mouseLocation)
         {
             var endWidth = 144;
             var endHeight = 144;
-            var cursorLocation = ScreenHelper.GetMouseLocation();
             var startWidth = endWidth / zoomLevel;
             var startHeight = endHeight / zoomLevel;
-            var xPos = Math.Max(0, cursorLocation.X - (startWidth / 2));
-            var yPos = Math.Max(0, cursorLocation.Y - (startHeight / 2));
+            var xPos = Math.Max(0, mouseLocation.X - (startWidth / 2));
+            var yPos = Math.Max(0, mouseLocation.Y - (startHeight / 2));
             var img = new Bitmap(startWidth, startHeight);
             using (var graphics = Graphics.FromImage(img))
             {
