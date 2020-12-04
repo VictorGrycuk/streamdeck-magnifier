@@ -31,6 +31,7 @@ Done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamde
 
 - **[Color Picker](https://github.com/VictorGrycuk/streamdeck-color-picker)**
 - **[KeePass for StreamDeck](https://github.com/VictorGrycuk/StreamDeck-KeePass)**
+- **[Repository Watcher](https://github.com/VictorGrycuk/streamdeck-repository-watcher)**
 
 
 
