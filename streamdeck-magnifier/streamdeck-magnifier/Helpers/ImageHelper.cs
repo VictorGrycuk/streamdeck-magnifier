@@ -34,8 +34,8 @@ namespace Magnifier.Helpers
             var endHeight = 144;
             var startWidth = endWidth / zoomLevel;
             var startHeight = endHeight / zoomLevel;
-            var xPos = Math.Max(0, mouseLocation.X - (startWidth / 2));
-            var yPos = Math.Max(0, mouseLocation.Y - (startHeight / 2));
+            var xPos = mouseLocation.X - (startWidth / 2);
+            var yPos = mouseLocation.Y - (startHeight / 2);
             var img = new Bitmap(startWidth, startHeight);
             using (var graphics = Graphics.FromImage(img))
             {
