@@ -6,7 +6,7 @@ namespace Magnifier
     {
         public static MagnifierSettings CreateDefaultSettings()
         {
-            var instance = new MagnifierSettings { ZoomLevel = 2 };
+            var instance = new MagnifierSettings { ZoomLevel = 2, RefreshRate = 100 };
             return instance;
         }
 
@@ -17,5 +17,8 @@ namespace Magnifier
         public bool UseCrosshair { get; set; }
 
         public int ZoomLevel { get; set; }
+
+        [JsonProperty(PropertyName = "refreshRate")]
+        public int RefreshRate { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace Magnifier
                 ? MagnifierSettings.CreateDefaultSettings()
                 : payload.Settings.ToObject<MagnifierSettings>();
             
-            Timer = new Timer(10);
+            Timer = new Timer(settings.RefreshRate);
             Timer.Elapsed += new ElapsedEventHandler(UpdateKey);
             Timer.Enabled = false;
             Timer.Start();
@@ -75,6 +75,7 @@ namespace Magnifier
         {
             Tools.AutoPopulateSettings(settings, payload.Settings);
             ParseZoomLevel();
+            UpdateRefreshRate();
             SaveSettings();
         }
 
@@ -95,6 +96,11 @@ namespace Magnifier
             {
                 Logger.Instance.LogMessage(TracingLevel.ERROR, "Cannot parse: " + settings.PIZoomLevel);
             }
+        }
+
+        private void UpdateRefreshRate()
+        {
+            Timer.Interval = settings.RefreshRate;
         }
     }
 }

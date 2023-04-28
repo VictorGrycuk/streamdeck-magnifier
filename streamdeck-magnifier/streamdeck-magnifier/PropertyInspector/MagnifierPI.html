@@ -14,12 +14,16 @@
         <div class="sdpi-item" id="dvZoomLevel">
             <div class="sdpi-item-label">Select Type</div>
             <select class="sdpi-item-value select sdProperty" id="zoomLevel" oninput="setSettings()">
-               <option value="2">2x</option>
-               <option value="4">4x</option>
-               <option value="8">8x</option>
-               <option value="16">16x</option>
-               <option value="32">32x</option>
+                <option value="2">2x</option>
+                <option value="4">4x</option>
+                <option value="8">8x</option>
+                <option value="16">16x</option>
+                <option value="32">32x</option>
             </select>
+        </div>
+        <div class="sdpi-item" id="dvInterval">
+            <div class="sdpi-item-label">Refresh Rate</div>
+            <input class="sdpi-item-value sdProperty" value="100" id="refreshRate" placeholder="in milliseconds" required pattern="\d+" oninput="setSettings()">
         </div>
         <div type="checkbox" class="sdpi-item" id="crosshair">
             <div class="sdpi-item-label">Show Crosshair</div>
