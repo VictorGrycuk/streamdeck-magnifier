@@ -22,7 +22,9 @@ namespace Magnifier
             settings = payload.Settings == null || payload.Settings.Count == 0
                 ? MagnifierSettings.CreateDefaultSettings()
                 : payload.Settings.ToObject<MagnifierSettings>();
-            
+
+            ParseLocation();
+            isFixed = settings.IsLocked;
             Timer = new Timer(settings.RefreshRate);
             Timer.Elapsed += new ElapsedEventHandler(UpdateKey);
             Timer.Enabled = false;
@@ -66,6 +68,10 @@ namespace Magnifier
                 mouseLocation = ScreenHelper.GetMouseLocation();
                 isFixed = !isFixed;
                 Timer.Enabled = true;
+                settings.Location = $"{mouseLocation.X};{mouseLocation.Y}";
+                Logger.Instance.LogMessage(TracingLevel.DEBUG, settings.Location);
+                settings.IsLocked = isFixed;
+                SaveSettings();
             }
         }
 
@@ -76,6 +82,7 @@ namespace Magnifier
             Tools.AutoPopulateSettings(settings, payload.Settings);
             ParseZoomLevel();
             UpdateRefreshRate();
+            ParseLocation();
             SaveSettings();
         }
 
@@ -101,6 +108,14 @@ namespace Magnifier
         private void UpdateRefreshRate()
         {
             Timer.Interval = settings.RefreshRate;
+        }
+
+        private void ParseLocation()
+        {
+            if (settings.Location == null) return;
+            var points = settings.Location.Split(';');
+            if (points.Length < 2) return;
+            mouseLocation = new Point(int.Parse(points[0]), int.Parse(points[1]));
         }
     }
 }

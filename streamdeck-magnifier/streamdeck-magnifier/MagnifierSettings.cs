@@ -20,5 +20,11 @@ namespace Magnifier
 
         [JsonProperty(PropertyName = "refreshRate")]
         public int RefreshRate { get; set; }
+
+        [JsonProperty(PropertyName = "location")]
+        public string Location { get; set; }
+
+        [JsonProperty(PropertyName = "isLocked")]
+        public bool IsLocked { get; set; }
     }
 }

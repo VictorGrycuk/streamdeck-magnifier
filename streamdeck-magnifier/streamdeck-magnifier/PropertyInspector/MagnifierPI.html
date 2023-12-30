@@ -34,6 +34,19 @@
                 </div>
             </div>
         </div>
+        <div type="checkbox" class="sdpi-item" id="locked">
+            <div class="sdpi-item-label">Is Locked</div>
+            <div class="sdpi-item-value min100">
+                <div class="sdpi-item-child">
+                    <input id="isLocked" class="sdProperty sdCheckbox" type="checkbox" name="isLocked" oninput="setSettings()">
+                    <label for="isLocked" class="sdpi-item-label"><span></span></label>
+                </div>
+            </div>
+        </div>
+        <div class="sdpi-item" id="dvLocation">
+            <div class="sdpi-item-label">Location</div>
+            <input class="sdpi-item-value sdProperty" id="location" oninput="setSettings()">
+        </div>
         <details class="message">
             <summary>Hold the key for 2+ seconds to lock it in place</summary>
         </details>
